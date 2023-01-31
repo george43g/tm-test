@@ -1,12 +1,12 @@
-p {
-  display: block;
-  margin: 0 auto;
-}
-
 .Participation {
-  background-color: blue;
+  background-color: rgb(29, 100, 207);
   display: block;
   border-radius: 1rem;
-  border: 1px #FFF8;
   margin: 20px;
+  padding: 1rem;
+  p {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+  }
 }

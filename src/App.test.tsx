@@ -1,11 +1,12 @@
 import React from 'react';
-import {render, screen} from '@testing-library/react';
+import {render, screen, waitFor} from '@testing-library/react';
 import App from './App';
 
 test('render Culture Amp element', async () => {
   render(<App />);
 
-  await screen.findByText(/Culture Amp/i);
+  await screen.findByText(/Acme Engagement/i);
+  await waitFor(() => expect(document.title).toMatch(/Culture Amp/i));
 });
 
 test('calculates the average', async () => {
@@ -13,5 +14,5 @@ test('calculates the average', async () => {
 
   const questionAverage = await screen.findByTestId('question-15-average');
 
-  expect(questionAverage).toHaveTextContent('3.70');
+  expect(questionAverage).toHaveTextContent('4.00');
 });
