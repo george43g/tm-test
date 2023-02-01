@@ -3,13 +3,9 @@ import {Question} from '../SurveyTypes';
 export default function (question: Question) {
   const ratingArray: number[] = question.survey_responses
     .map(response => response.response_content)
-    .map(response => {
-      // console.log(response);
-      return response;
-    })
     .filter(responseContent => responseContent !== '')
     .filter(isNumeric)
-    .map(parseInt)
+    .map(val => parseInt(val, 10)) // ! The bug was here! map passes additional args
     .filter(responseNumber => responseNumber <= 5 && responseNumber >= 1);
 
   const sum = ratingArray.reduce((a, b) => a + b, 0);

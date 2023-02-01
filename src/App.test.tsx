@@ -14,5 +14,5 @@ test('calculates the average', async () => {
 
   const questionAverage = await screen.findByTestId('question-15-average');
 
-  expect(questionAverage).toHaveTextContent('4.00');
+  expect(questionAverage).toHaveTextContent('3.70');
 });
